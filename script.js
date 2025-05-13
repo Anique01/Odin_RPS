@@ -1,4 +1,7 @@
-function playRound(humanChoice, computerChoice) {
+let humanScore = 0;
+let computerScore = 0;
+
+function playRound(humanChoice, computerChoice, humanScore, computerScore) {
     humanChoice = humanChoice.toLowerCase();
 
     if (humanChoice === computerChoice) {
@@ -14,6 +17,8 @@ function playRound(humanChoice, computerChoice) {
         computerScore += 1;
         console.log(`You lose! ${computerChoice} beats ${humanChoice}`);
     }
+
+    return [humanScore, computerScore];  // Return the updated scores
 }
 
 function playGame() {
@@ -23,7 +28,9 @@ function playGame() {
     for (let i = 0; i < 5; i++) {
         let humanSelection = getHumanChoice();
         let computerSelection = getComputerChoice();
-        playRound(humanSelection, computerSelection);
+        
+        // Call playRound and get the updated scores
+        [humanScore, computerScore] = playRound(humanSelection, computerSelection, humanScore, computerScore);
         
         console.log(`Current score - You: ${humanScore} | Computer: ${computerScore}`);
     }
@@ -53,6 +60,5 @@ function getHumanChoice() {
     let humanChoice = prompt("Enter your choice: rock, paper, or scissors").toLowerCase();
     return humanChoice;
 }
-
 
 playGame();
