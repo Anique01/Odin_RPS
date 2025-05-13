@@ -9,7 +9,7 @@ function getComputerChoice() {
     } else if (randomNumber < 0.66) {
         return "paper";
     } else {
-        return "scissors"
+        return "scissors";
     }
 }
 
@@ -18,11 +18,11 @@ function getHumanChoice() {
     return humanChoice;
 }
 
-function playRound(humanChoice, getComputerChoice) {
+function playRound(humanChoice, computerChoice) {
     humanChoice = humanChoice.toLowerCase();
 
     if (humanChoice === computerChoice) {
-        console.log{"It's a tie"};
+        console.log("It's a tie!");
     } else if (
         (humanChoice === "rock" && computerChoice === "scissors") ||
         (humanChoice === "paper" && computerChoice === "rock") ||
@@ -36,6 +36,7 @@ function playRound(humanChoice, getComputerChoice) {
     }
 }
 
-console.log(getComputerChoice());
-console.log(getHumanChoice());
+// Get choices and play one round
+let humanSelection = getHumanChoice();
+let computerSelection = getComputerChoice();
 playRound(humanSelection, computerSelection);
