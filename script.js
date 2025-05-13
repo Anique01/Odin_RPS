@@ -1,6 +1,13 @@
 function getComputerChoice() {
     let randomNumber = Math.random();
-    console.log(randomNumber);
+
+    if (randomNumber < 0.33) {
+    let randomNumber = Math.random();
+    if (randomNumber < 0.33) {
+        return "rock";
+    }
 }
 
-getComputerChoice();
+}
+
+console.log(getComputerChoice());
